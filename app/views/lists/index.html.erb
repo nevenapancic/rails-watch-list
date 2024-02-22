@@ -1,0 +1,18 @@
+<div class="container">
+    <% @movies.each do |movie| %>
+  <div>
+    <%=movie.title %>
+  </div>
+    <% end %>
+  <div class="lists">
+    <% @lists.each do |list| %>
+     <%=link_to list_path(list.id) do  %>
+      <div class="list-card">
+        <img src="" />
+        <h2><%= list.name %></h2>
+      </div>
+  </div>
+     <% end %>
+    <% end %>
+  <%= link_to "Create a movie list", new_list_path %>
+</div>
