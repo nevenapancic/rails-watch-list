@@ -13,4 +13,43 @@
  *= require_tree .
  *= require_self
  */
- 
+.nav-link > a {
+  text-decoration: none!important;
+  color: black!important;
+}
+
+.titles_lists {
+  text-decoration: none!important;
+  color: black!important;
+}
+.lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 16px;
+  flex-grow: 1;
+}
+.logo {
+  width: 60px;
+}
+.navbar {
+  background-color: rgba(244, 244, 244, 0.936);
+}
+/* .nav-link {
+  color: black;
+} */
+.lists {
+  text-decoration: none;
+  color: black;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15 px  rgba(0,0,0,0.2);
+}

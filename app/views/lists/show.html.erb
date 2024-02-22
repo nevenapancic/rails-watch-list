@@ -1,25 +1,38 @@
-<div class="container">
-  
-  <h1>This is list: <%= @list.name %></h1>
-    <div class='movies'>
-      <% @bookmarks.each do |bookmark| %>
-          <% movie = bookmark.movie %>
-        <div class='movie-card'>
-          <h2><%= movie.title %></h2>
-          <p><%= movie.overview %></p>
-          <p><%= movie.rating %></p>
-          <p><%= bookmark.comment%></p>
-<%= link_to "Delete a movie",
-  bookmark_path(bookmark.id),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<div class="container py-3">
+  <div class="d-flex justify-content-end my-4">
+    <%= link_to "add movie", new_list_bookmark_path(@list), class:"btn btn-success mx-1" %>
+    <%= link_to "delete this list", list_path(@list), class:"btn btn-danger mx-1", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <%= link_to "my lists", lists_path, class:"btn btn-primary mx-2"%>
+    <%= link_to "create a list", new_list_path, class:"btn btn-success mx-1"  %>
+  </div>
+  <h1> <%= @list.name %></h1>
+  <div class="row my-2">
+    <% @bookmarks.each do |bookmark| %>
+        <% movie = bookmark.movie %>
+        <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+          <div class='bg-white rounded shadow h-100'>
+            <img src="" alt="" class="movie-img rounded-top">
+            <div class='p-3 rounded-bottom d-flex flex-column'>
+              <strong>
+                <%= movie.title %>
+                <span class="text-muted font-weight-normal">
+                  <%= movie.rating %>/10
+                </span>
+              </strong>
+              <small class="text-muted"><%= movie.overview %></small>
+              <div class="d-flex align-items-end justify-content-between pt-4">
+                <div class="w-100 d-flex justify-content-between">
+                  <small class="flex-grow-1"><%= bookmark.comment%></small>
+                  <%= link_to "delete",
+                    bookmark_path(bookmark.id), class:"btn btn-danger mx-1 ",
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                  %>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       <% end %>
     </div>
-</div>
-<div class="options">
-<%= link_to "Back to all lists", lists_path %>
-<%= link_to "Add movie", new_list_bookmark_path(@list) %>
-<%= link_to "Delete this list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-<%= link_to "Create a movie list", new_list_path %>
 </div>

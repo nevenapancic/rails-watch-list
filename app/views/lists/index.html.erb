@@ -1,18 +1,16 @@
-<div class="container">
-    <% @movies.each do |movie| %>
-  <div>
-    <%=movie.title %>
+
+<div class="container py-5">
+  <div class='d-flex align-items-center justify-content-between mb-4'>
+  <h1>my Lists</h1>
+  <%= link_to "create a movie list", new_list_path, class: "btn btn-success"%>
   </div>
-    <% end %>
   <div class="lists">
     <% @lists.each do |list| %>
-     <%=link_to list_path(list.id) do  %>
-      <div class="list-card">
-        <img src="" />
+  <div class="list" style="background-image:linear-gradient(rgbs(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.augustman.com/wp-content/uploads/sites/2/2021/12/31223621/harry-potter.jpeg?tr=w-1366)">
+     <%=link_to list_path(list.id), class: "titles_lists" do  %>
         <h2><%= list.name %></h2>
-      </div>
   </div>
      <% end %>
     <% end %>
-  <%= link_to "Create a movie list", new_list_path %>
+</div>
 </div>

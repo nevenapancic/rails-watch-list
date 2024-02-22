@@ -1,5 +1,19 @@
-<h1>Making new list</h1>
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+  <div class="bg-white rounded p-3 shadow">
+    <h1>make a new list</h1>
+    <form class='simple_form new_list' id="new_list" novalidate="novalidate" enctype="multipart/form-data" action="/lists" accept-charset="UTF-8" method="post">
+      <input type="hidden" name="authenticity_token" autocomplete="off">
+      <div class="mb-3 string required last_name">
+        <label class="form-label string required" for="last_name">Name
+          <abbr title="required">*</abbr>
+          </label>
+          <input class="form-control string required" placeholder="Drama" type="text" name="list[name]" id="list_name">
+          </div>
+          <input type="submit" name="commit" value="create list" class="btn btn-success" data-disable-with="Create List">
+          </form>
+</div>
+</div>
+</div>
+</div>
