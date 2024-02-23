@@ -1,5 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container h-100 align-text-bottom text-white">
+<div class="banner pb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://fr.web.img5.acsta.net/medias/nmedia/18/68/80/53/19737342.jpg);">
+  <div class="container h-100 align-text-bottom text-white ">
      <h1> Watch list </h1>
     <p> Keep your movies organized, popcorn ready and choices good</p>
   </div>
@@ -11,7 +11,7 @@
   </div>
   <div class="lists">
     <% @lists.each do |list| %>
-  <div class="list" style="background-image:linear-gradient(rgbs(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.augustman.com/wp-content/uploads/sites/2/2021/12/31223621/harry-potter.jpeg?tr=w-1366)">
+  <div class="list" style="background-image:linear-gradient(rgbs(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
      <%=link_to list_path(list.id), class: "titles_lists" do  %>
         <h2><%= list.name %></h2>
   </div>

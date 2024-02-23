@@ -17,7 +17,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
- 
+
 }
 
 .banner h1 {
@@ -50,9 +50,7 @@
 .navbar {
   background-color: rgba(244, 244, 244, 0.936);
 }
-/* .nav-link {
-  color: black;
-} */
+
 .lists {
   text-decoration: none;
   color: black;
