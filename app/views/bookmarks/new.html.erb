@@ -2,13 +2,17 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h1>add a new movie</h1>
+        <h1>Add a new movie</h1>
         <%= simple_form_for [@list, @bookmark] do |f| %>
           <%= f.association :movie %>
           <%= f.input :comment %>
-         <input type="submit" name="commit" value="create bookmark" class="btn btn-success" data-disable-with="create bookmark">
+          <button type="submit" name="commit" value="create bookmark" class="btn btn-outline-light" data-disable-with="create bookmark" >
+          <i class="fa-solid fa-plus fa-lg px-2" style="color: #009957;"> add movie</i>
+          </button>
         <% end %>
-        <%= link_to "my lists", lists_path, class:"btn btn-danger mt-1" %>
+       <%= link_to lists_path do%>
+    <i class="fa-solid fa-list fa-lg px-4" style="color: #003ca3;"> my lists</i>
+    <% end %>
       </div>
     </div>
   </div>

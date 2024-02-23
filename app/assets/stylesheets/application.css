@@ -16,10 +16,22 @@
  .banner {
   background-size: cover;
   background-position: center;
+  padding: 280px 0 20px 0;
+
+}
+.bannerlist {
+  background-size: cover;
+  background-position: center;
   padding: 150px 0;
 
 }
-
+.bannerlist h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
 .banner h1 {
   margin: 0;
   color: white;
@@ -42,7 +54,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
   margin: 16px;
-  flex-grow: 1;
 }
 .logo {
   width: 60px;
@@ -51,16 +62,16 @@
   background-color: rgba(244, 244, 244, 0.936);
 }
 
-.lists {
+.list {
   text-decoration: none;
-  color: black;
-  background-size: cover;
+  color: white!important;
+  background-size: 500px 300px;
   background-position: center;
-  height: 180px;
+  height: 200px;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);

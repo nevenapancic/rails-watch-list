@@ -2,20 +2,22 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
   <div class="bg-white rounded p-3 shadow">
-    <h1>make a new list</h1>
+    <h1> Make a new list</h1>
     <form class='simple_form new_list' id="new_list" novalidate="novalidate" enctype="multipart/form-data" action="/lists" accept-charset="UTF-8" method="post">
       <input type="hidden" name="authenticity_token" autocomplete="off">
       <div class="mb-3 string required last_name">
-        <label class="form-label string required" for="last_name">name
+        <label class="form-label string required" for="last_name"> Name
           <abbr title="required">*</abbr>
           </label>
           <input class="form-control string required" placeholder="Drama" type="text" name="list[name]" id="list_name">
           </div>
           <div class="mb-3 file optional list_photo">
-            <label class="form-label file optional" for="list_photo">photo</label>
+            <label class="form-label file optional" for="list_photo"> Photo</label>
             <input class="form-control file optional" type="file" name="list[photo]" id="list_photo">
           </div>
-          <input type="submit" name="commit" value="create list" class="btn btn-success" data-disable-with="Create List">
+          <button type="submit" name="commit" value="create list" class="btn btn-outline-light" data-disable-with="Create List" >
+          <i class="fa-solid fa-plus fa-lg px-2" style="color: #009957;"> create list</i>
+          </button>
           </form>
 </div>
 </div>
