@@ -6,13 +6,13 @@
         <%= simple_form_for [@list, @bookmark] do |f| %>
           <%= f.association :movie %>
           <%= f.input :comment %>
-          <button type="submit" name="commit" value="create bookmark" class="btn btn-outline-light" data-disable-with="create bookmark" >
-          <i class="fa-solid fa-plus fa-lg px-2" style="color: #009957;"> add movie</i>
+          <div class="d-flex justify-content-between">
+       <%= link_to "Back", lists_path, class:"btn btn-outline-dark"%>
+          <button type="submit" value="create bookmark" class="btn btn-outline-success" data-disable-with="create bookmark" >
+        Add movie
           </button>
+          </div>
         <% end %>
-       <%= link_to lists_path do%>
-    <i class="fa-solid fa-list fa-lg px-4" style="color: #003ca3;"> my lists</i>
-    <% end %>
       </div>
     </div>
   </div>

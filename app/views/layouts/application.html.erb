@@ -17,12 +17,8 @@
       <%= link_to lists_path do%>
   <img class="logo rounded float-left" src="https://cryptic-shelf-08501-53c42268c56d.herokuapp.com/assets/popcorn-feae365cc3af158ca5e6f3a4e5022271b98ddb25549bc32efd7f65e93ae62aaa.png" alt="popcorn">
     <% end %>
-  <div class='d-flex mt-3'><p class="nav-link"><%= link_to lists_path do%>
-    <i class="fa-solid fa-list fa-lg px-1" style="color: #003ca3;"> my lists</i>
-    <% end %></p>
-  <p class="nav-link"><%= link_to new_list_path do %>
-    <i class="fa-solid fa-circle-plus fa-lg px-1" style="color: #009957;"> create list</i>
-    <% end %></p></div>
+  <div> <%= link_to "My lists", lists_path, class:"btn btn-outline-dark" %>
+  <%= link_to "Create new list", new_list_path, class:"btn btn-outline-success" %></div>
 </div>
     <%= yield %>
   </body>

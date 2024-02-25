@@ -72,3 +72,4 @@ gem "sassc-rails"
 gem 'font-awesome-rails'
 gem "dotenv-rails"
 gem "cloudinary"
+gem 'httparty'

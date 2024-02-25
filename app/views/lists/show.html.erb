@@ -5,20 +5,18 @@
 </div>
 <div class="container py-3">
   <div class="d-flex justify-content-end my-4">
-    <%= link_to new_list_bookmark_path(@list) do %>
-    <i class="fa-solid fa-plus fa-lg px-2" style="color: #009957;"> add movie  </i>
-    <% end %>
-    <%= link_to list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-    <i class="fa-solid fa-xmark fa-lg px-1" style="color: #cc0000;"> delete list</i>
-    <% end %>
+    <%= link_to "Add movie", new_list_bookmark_path(@list), class:"btn btn-outline-success mx-1"%>
+    <%= link_to "Delete list", list_path(@list), class:"btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   </div>
-  <div class="row my-2">
+  <div class="row justify-content-center my-2">
     <% @bookmarks.each do |bookmark| %>
         <% movie = bookmark.movie %>
-        <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
-          <div class='bg-white rounded shadow h-100'>
-            <img src="" alt="" class="movie-img rounded-top">
-            <div class='p-3 rounded-bottom d-flex flex-column'>
+        <div class="col-12 	col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="zoom-in">
+          <div class='bg-white rounded shadow h-100 d-flex flex-column'>
+            <img src="<%= movie.poster_url %>" alt="" class="movie-img rounded-top">
+            <div class='p-3 rounded-bottom h-100 d-flex flex-column justify-content-between'>
+            <%# <div class='p-3 rounded-bottom'> %>
+              <div>
               <strong>
                 <%= movie.title %>
                 <span class="text-muted font-weight-normal"></i>
@@ -26,9 +24,10 @@
                 </span>
               </strong>
               <small class="text-muted"><%= movie.overview %></small>
-              <div class="d-flex align-items-end justify-content-between pt-4">
+              </div>
+              <div class="d-flex justify-content-between align-content-end">
                 <div class="w-100 d-flex justify-content-between">
-              <i class="fas fa-quote-left me-2"></i>
+                  <i class="fas fa-quote-left me-2"></i>
                   <small class="flex-grow-1"><%= bookmark.comment%></small>
                   <%= link_to bookmark_path(bookmark.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
                   <i class="fa-solid fa-xmark fa-lg" style="color: #cc0000;"></i>
